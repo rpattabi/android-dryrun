@@ -37,7 +37,7 @@ android {
 		}
 
 		androidTest {
-			setRoot('src/test/robolectric/')
+			setRoot('src/test/java/')
 			manifest.srcFile 'AndroidManifest.xml'
 		}
 	}
@@ -71,6 +71,10 @@ dependencies {
       maven {
         url 'https://oss.sonatype.org/content/repositories/snapshots/'
       }
+  }
+
+  androidTestCompile('junit:junit:4.11') {
+    exclude module: 'hamcrest-core'
   }
 
   androidTestCompile('org.robolectric:robolectric:2.3') {
