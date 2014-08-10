@@ -1,8 +1,6 @@
 language: android
 jdk: oraclejdk7
 env:
-- TERM=dumb
-env:
 matrix:
 - ANDROID_TARGET=android-19 ANDROID_ABI=armeabi-v7a
 android:
@@ -23,5 +21,5 @@ install:
 # Prevent `gradle assemble` from being invoked by overriding with no-op
 - true
 script:
-- TERM=dumb ./Scripts/run-tests-travis.sh
+- gradle test
 - gradle connectedAndroidTest
